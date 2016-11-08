@@ -110,18 +110,8 @@ set wildmenu "Completions view in ex mode (super useful !)
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.ps,*.pdf,*.cmo,*.cmi,*.cmx "Don't complete bin files
 set cmdheight=1 "Command line height
 set laststatus=2 "When to show status line (2=always)
-" Set statusline - silently fail if vim lacks version / plugins
-" set statusline=%F%m%r%h%w\%=[%4l/%-4L\ %3v]\ [%p%%]
-" if (v:version >= 700)
-"    set statusline=%F%m%r%h%w\%=[%4l/%-4L\ %3v/%-3{len(getline('.'))}]\ [%p%%]
-"    silent! call fugitive#statusline() " We have to call it first in order to test existence
-"    if exists('*fugitive#statusline')
-"	set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ \%=\ [%4l/%-4L\ %3v/%-3{len(getline('.'))}]\ [%p%%]
-"    endif
-" endif
 set ruler "Show line,col in statusbar
 set number "Show lines
-set showmode "Show mode in status (insertion, visual...)
 set showcmd "Show beginning of normal commands (try d and see at bottom-right)
 
 " Suffixes that get lower priority when doing tab completion for filenames.

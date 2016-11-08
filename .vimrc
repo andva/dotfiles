@@ -3,8 +3,7 @@ set nocp
 
 " Pathogen conf
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+execute pathogen#infect()
 
 " File types and coloration have to be set here
 syntax on

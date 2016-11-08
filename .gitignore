@@ -1,0 +1,6 @@
+CONFIG
+.*.sw[opnm]
+.DS_Store
+
+.vim/.netrwhist
+.vim/doc/tags

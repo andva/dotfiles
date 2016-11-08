@@ -1,0 +1,21 @@
+{
+	"ignore": [
+		"CONFIG",
+		"README.md",
+		"bin",
+		"bin",
+		"todo",
+		"*.orig",
+		"*.rej",
+		".*.swp",
+		"*~",
+		"#*#",
+		".DS_STORE",
+		"tags",
+		"TAGS",
+        ".git"
+	],
+	"first_child": ".config",
+	"dest_dir": "C:\\Users\\andre",
+	"dotfiles_relative_path": "dotfiles"
+}

@@ -1,0 +1,6 @@
+*.sw[pon]
+*.o
+*.pyc
+.DS_Store
+#*#
+*.orig

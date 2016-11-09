@@ -64,7 +64,6 @@ set cursorline
 
 " Indentation and tabs
 set autoindent "Indent (based on above line) when adding a line
-set tabstop=8 "A tab is 8 spaces
 if 1
     set tabstop=4 " Tab size
 else
@@ -89,6 +88,7 @@ set modeline "Vim mini-confs near end of file
 set modelines=5
 set lcs+=space:·
 set listchars=tab:\|\ ,trail:·,extends:>,precedes:<,nbsp:%
+let g:indentLine_leadingSpaceEnabled=1
 set list
 set fileformats+=mac
 set nojoinspaces

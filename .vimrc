@@ -48,9 +48,9 @@ if has("gui_running") " GUI mode
         set guifont=Consolas:h10:cANSI
     endif
 elseif has('gui') " A terminal with GUI support
-	set termencoding=utf-8
+    set termencoding=utf-8
 else
-	set termencoding=utf-8
+    set termencoding=utf-8
     if g:PLATFORM =~ "mac"
         set t_ZH=[3m t_ZR=[23m " Set the italics code
     endif
@@ -66,11 +66,11 @@ set cursorline
 set autoindent "Indent (based on above line) when adding a line
 set tabstop=8 "A tab is 8 spaces
 if 1
-	set tabstop=4 " Tab size
+    set tabstop=4 " Tab size
 else
-	set shiftwidth=4 " Number of spaces to be inserted for tabs
+    set shiftwidth=4 " Number of spaces to be inserted for tabs
 
-	set expandtab " Use spaces instead of tabs
+    set expandtab " Use spaces instead of tabs
 endif
 set softtabstop=4 "See 4 spaces per tab
 set expandtab
@@ -87,6 +87,7 @@ set linebreak "Break lines at words, not chars
 set scrolloff=4 "When moving vertical, start scrolling 4 lines before reaching bottom
 set modeline "Vim mini-confs near end of file
 set modelines=5
+set lcs+=space:·
 set listchars=tab:\|\ ,trail:·,extends:>,precedes:<,nbsp:%
 set list
 set fileformats+=mac

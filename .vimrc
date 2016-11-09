@@ -87,7 +87,8 @@ set linebreak "Break lines at words, not chars
 set scrolloff=4 "When moving vertical, start scrolling 4 lines before reaching bottom
 set modeline "Vim mini-confs near end of file
 set modelines=5
-set listchars+=tab:>-,trail:·,extends:~,nbsp:-
+set listchars=tab:\|\ ,trail:·,extends:>,precedes:<,nbsp:%
+set list
 set fileformats+=mac
 set nojoinspaces
 :autocmd InsertEnter,InsertLeave * set cul!

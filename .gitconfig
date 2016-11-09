@@ -1,42 +1,44 @@
 [http]
-    sslVerify = false
+	sslVerify = false
 
 [user]
-    name = andreas.valter
-    email = andreas.valter@king.com
+	name = andreas.valter
+	email = andreas.valter@king.com
 
 [core]
-    exludesfile = ~/.gitexclude
-    trustctime = false
+	exludesfile = ~/.gitexclude
+	trustctime = false
 
 [color]
-    ui = auto
+	ui = auto
 [color "branch"]
-    current = blue reverse
-    local = blue
-    remote = yellow
+	current = blue reverse
+	local = blue
+	remote = yellow
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
-    whitespace = red reverse
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 
 [alias]
-    st = status
+	st = status
+	lg = log --oneline --decorate --graph --all
+	s = status -s
 
 [push]
-    default = simple
+	default = simple
 
 [merge "ours"]
-    driver = true
+	driver = true
 
 [merge "theirs"]
-    driver = mv %B %A
+	driver = mv %B %A
 
 [merge "conflict"]
-    driver = false
+	driver = false

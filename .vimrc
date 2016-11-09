@@ -43,7 +43,7 @@ if has("gui_running") " GUI mode
     if has("gui_gtk2")
         set guifont=Inconsolata\ 12
     elseif has("gui_macvim")
-        set guifont=Menlo\ Regular:h14
+        set guifont=Menlo\ Regular:h10
     elseif has("gui_win32")
         set guifont=Consolas:h10:cANSI
     endif
@@ -56,12 +56,22 @@ else
     endif
 endif
 
+" Status line
+set statusline=%F%m%r%h%w\ (%{&ff}){%Y}\ [%l,%v][%p%%]
+
 " Highlight current line, no underline/bold/whatnot
 set cursorline
 
 " Indentation and tabs
 set autoindent "Indent (based on above line) when adding a line
 set tabstop=8 "A tab is 8 spaces
+if 1
+	set tabstop=4 " Tab size
+else
+	set shiftwidth=4 " Number of spaces to be inserted for tabs
+
+	set expandtab " Use spaces instead of tabs
+endif
 set softtabstop=4 "See 4 spaces per tab
 set expandtab
 set shiftwidth=4 "Indent is 4
@@ -107,6 +117,7 @@ set hidden "To move between buffers without writing them.  Don't :q! or :qa! fri
 
 " Command mode options
 set wildmenu "Completions view in ex mode (super useful !)
+set wildmode=list:longest,full
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.ps,*.pdf,*.cmo,*.cmi,*.cmx "Don't complete bin files
 set cmdheight=1 "Command line height
 set laststatus=2 "When to show status line (2=always)
@@ -118,8 +129,28 @@ set showcmd "Show beginning of normal commands (try d and see at bottom-right)
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.job
 
+" backup to ~/.tmp 
+set backup 
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+set backupskip=/tmp/*,/private/tmp/* 
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp 
+set writebackup
+
 " A good trick to take the hjkl-use habit
 nmap <left> :echo "Left is 'h' !"<cr>
 nmap <down> :echo "Down is 'j' !"<cr>
 nmap <up> :echo "Up is 'k' !"<cr>
 nmap <right> :echo "Right is 'l' !"<cr>
+
+" Commenting blocks of code.
+autocmd FileType c,cpp,java,scala let b:comment_leader = '// '
+autocmd FileType sh,ruby,python   let b:comment_leader = '# '
+autocmd FileType conf,fstab       let b:comment_leader = '# '
+autocmd FileType tex              let b:comment_leader = '% '
+autocmd FileType mail             let b:comment_leader = '> '
+autocmd FileType vim              let b:comment_leader = '" '
+autocmd FileType cmake            let b:comment_leader = '# '
+noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
+noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+

@@ -22,8 +22,7 @@ def do_symlink(target, dest):
         # call(["mklink"])
         os.system("mklink " + dest + " " + target)
     else:
-        os.symlink(target, dest)
-
+        os.system("ln -s " + target + " " + dest)
 
 with open(os.path.join(base_dir, "CONFIG")) as data_file:
     data = json.load(data_file)
@@ -42,15 +41,12 @@ def is_ignored(element, ignore_vals):
             return False
     return True
 
-# for f in files:
-    #filteredFiles = [x for x in files if x not in ignores]
-    #filteredDirs = [x for x in directories if x not in ignores]
+local_bash = os.path.join(base_dir, "../.bash_local")
+if not os.path.exists(local_bash):
+    open(local_bash, "w").close()
+
 files = list(filter(lambda x: is_ignored(x, ignores), files))
 dirs = list(filter(lambda x: is_ignored(x, ignores), dirs))
-    # for f in res:
-        # print(f)
-print(files)
-print(dirs)
 
 for f in files:
     do_symlink(os.path.join(base_dir, f), os.path.join(data["dest_dir"], f))

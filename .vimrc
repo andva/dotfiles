@@ -21,39 +21,39 @@ colorscheme primary
 let s:path = expand('<sfile>:p:h')
 let s:config_path = s:path . '/.vim'
 if has('win32') || has('win64')
-    let g:PLATFORM = 'win'
+	let g:PLATFORM = 'win'
 elseif has('macunix') || system('uname -o') =~? '^darwin'
-    let g:PLATFORM = 'mac'
+	let g:PLATFORM = 'mac'
 elseif has('win32unix')
-    let g:PLATFORM = 'cygwin'
+	let g:PLATFORM = 'cygwin'
 else
-    let g:PLATFORM = 'other'
+	let g:PLATFORM = 'other'
 endif
 
 if has("gui_running") " GUI mode
-    let &guicursor = &guicursor . ",a:blinkon0"
-    set guioptions-=e "No gui-like tabs
-    set guioptions-=T "No toolbar
-    set guioptions-=m "No menubar
-    set guioptions-=r "No scroolbar (right)
-    set guioptions-=L "No scroolbar (left)
-    set guioptions+=c "Console dialogs (no popup)
-    "set guioptions+=a "Gui visual w/ mouse (yank to "*)
+	let &guicursor = &guicursor . ",a:blinkon0"
+	set guioptions-=e "No gui-like tabs
+	set guioptions-=T "No toolbar
+	set guioptions-=m "No menubar
+	set guioptions-=r "No scroolbar (right)
+	set guioptions-=L "No scroolbar (left)
+	set guioptions+=c "Console dialogs (no popup)
+	"set guioptions+=a "Gui visual w/ mouse (yank to "*)
 
-    if has("gui_gtk2")
-        set guifont=Inconsolata\ 12
-    elseif has("gui_macvim")
-        set guifont=Menlo\ Regular:h10
-    elseif has("gui_win32")
-        set guifont=Consolas:h10:cANSI
-    endif
+	if has("gui_gtk2")
+		set guifont=Inconsolata\ 12
+	elseif has("gui_macvim")
+		set guifont=Menlo\ Regular:h11
+	elseif has("gui_win32")
+		set guifont=Consolas:h10:cANSI
+	endif
 elseif has('gui') " A terminal with GUI support
-    set termencoding=utf-8
+	set termencoding=utf-8
 else
-    set termencoding=utf-8
-    if g:PLATFORM =~ "mac"
-        set t_ZH=[3m t_ZR=[23m " Set the italics code
-    endif
+	set termencoding=utf-8
+	if g:PLATFORM =~ "mac"
+		set t_ZH=[3m t_ZR=[23m " Set the italics code
+	endif
 endif
 
 " Status line
@@ -65,15 +65,14 @@ set cursorline
 " Indentation and tabs
 set autoindent "Indent (based on above line) when adding a line
 if 1
-    set tabstop=4 " Tab size
+	set tabstop=4 " Tab size
+	set shiftwidth=4 " Size of tab when using << and >>
 else
-    set shiftwidth=4 " Number of spaces to be inserted for tabs
-
-    set expandtab " Use spaces instead of tabs
+	set shiftwidth=4 " Number of spaces to be inserted for tabs
+	set softtabstop=4 "See 4 spaces per tab
+	set expandtab " Use spaces instead of tabs
 endif
-set softtabstop=4 "See 4 spaces per tab
-set expandtab
-set shiftwidth=4 "Indent is 4
+
 set shiftround
 set nosmartindent "Cindent is better (it is set in ftplugin)
 set cinkeys-=0# " Otherwise, it prevents '#' from being indented

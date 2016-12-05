@@ -73,6 +73,8 @@ else
 	set expandtab " Use spaces instead of tabs
 endif
 
+autocmd FileType py setlocal shiftwidth=4 tabstop=4
+
 set shiftround
 set nosmartindent "Cindent is better (it is set in ftplugin)
 set cinkeys-=0# " Otherwise, it prevents '#' from being indented
@@ -138,10 +140,10 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set writebackup
 
 " A good trick to take the hjkl-use habit
-nmap <left> :echo "Left is 'h' !"<cr>
-nmap <down> :echo "Down is 'j' !"<cr>
-nmap <up> :echo "Up is 'k' !"<cr>
-nmap <right> :echo "Right is 'l' !"<cr>
+" nmap <left> :echo "Left is 'h' !"<cr>
+" nmap <down> :echo "Down is 'j' !"<cr>
+" nmap <up> :echo "Up is 'k' !"<cr>
+" nmap <right> :echo "Right is 'l' !"<cr>
 
 " Commenting blocks of code.
 autocmd FileType c,cpp,java,scala let b:comment_leader = '// '

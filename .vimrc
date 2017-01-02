@@ -85,7 +85,10 @@ set linebreak "Break lines at words, not chars
 set scrolloff=4 "When moving vertical, start scrolling 4 lines before reaching bottom
 set modeline "Vim mini-confs near end of file
 set modelines=5
-set lcs+=space:·
+if g:PLATFORM =~ "mac"
+	set lcs+=space:·
+endif
+
 set listchars=tab:\|\ ,trail:·,extends:>,precedes:<,nbsp:%
 let g:indentLine_leadingSpaceEnabled=1
 set list

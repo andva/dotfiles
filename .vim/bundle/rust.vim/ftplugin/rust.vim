@@ -141,7 +141,6 @@ endif
 
 let b:undo_ftplugin = "
 		\ setlocal formatoptions< comments< commentstring< includeexpr< suffixesadd<
-		\|setlocal tabstop< shiftwidth< softtabstop< expandtab< textwidth<
 		\|if exists('b:rust_original_delimitMate_excluded_regions')
 		  \|let b:delimitMate_excluded_regions = b:rust_original_delimitMate_excluded_regions
 		  \|unlet b:rust_original_delimitMate_excluded_regions

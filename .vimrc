@@ -73,8 +73,7 @@ else
 	set expandtab " Use spaces instead of tabs
 endif
 
-autocmd FileType py setlocal shiftwidth=4 tabstop=4
-
+let g:python_recommended_style=0
 set shiftround
 set nosmartindent "Cindent is better (it is set in ftplugin)
 set cinkeys-=0# " Otherwise, it prevents '#' from being indented

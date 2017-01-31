@@ -4,7 +4,7 @@ source ~/.bash_local
 # if [[ "$OSTYPE" == "linux-gnu" ]]; then
 if [[ "$OSTYPE" != "win32" ]]; then
 	if [ -f /usr/local/share/gitprompt.sh ]; then
-		GIT_PROMPT_THEME=Default
+		GIT_PROMPT_THEME=Solarized
 		. /usr/local/share/gitprompt.sh
 	fi
 fi
